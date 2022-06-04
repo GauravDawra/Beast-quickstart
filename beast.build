@@ -1,8 +1,9 @@
 CXX = "g++"
 TARGET = "main"
+UTIL = "util"
 
-build $(TARGET) : main.cpp util.o
-	! $(CXX) main.cpp util.cpp -o main
+build $(TARGET) : main.cpp $(UTIL).o
+	! $(CXX) $1 $2 -o $(out)
 
-build util.o : util.cpp util.h
-	! $(CXX) util.cpp -c
+build $(UTIL).o : $(UTIL).cpp $(UTIL).h
+	! $(CXX) $(UTIL).cpp -c

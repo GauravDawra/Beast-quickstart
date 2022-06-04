@@ -1,5 +1,5 @@
 #include "util.h"
 
 void welcome() {
-    std::cout << "hello there" << std::endl;
+    std::cout << "Hello there!!! Your beast build was successful!!" << std::endl;
 }
