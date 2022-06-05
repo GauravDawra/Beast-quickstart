@@ -1,9 +1,15 @@
-CXX = "g++"
-TARGET = "main"
+CXX = "g++"		# C++ compiler
+TARGET = "main"	# target executable
 UTIL = "util"
 
+## building the final target
 build $(TARGET) : main.cpp $(UTIL).o
 	! $(CXX) $1 $2 -o $(out)
 
+## building the helper utility object
 build $(UTIL).o : $(UTIL).cpp $(UTIL).h
 	! $(CXX) $(UTIL).cpp -c
+
+## building the subdirectory sub
+build buildSub:
+	! beast -d sub
